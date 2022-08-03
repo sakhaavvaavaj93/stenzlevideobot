@@ -247,8 +247,7 @@ async def callbacks(_, cq: CallbackQuery):
             await cq.answer("» ʟᴀɢᴜ ʙᴇʀʜᴀꜱɪʟ ᴅɪʟᴇᴡᴀᴛɪ.")
 
 
-@bot.on_message(
-    command(["start", f"start@{BOT_USERNAME}"]) & filters.private & ~filters.edited
+@bot.on_message(filters.command(["start", f"start@{BOT_USERNAME}"]) & filters.private & ~filters.edited
 )
 async def start_private(client: Client, message: Message):
  await message.reply_photo(photo = START_IMG,
