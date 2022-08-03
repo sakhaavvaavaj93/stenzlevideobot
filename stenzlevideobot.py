@@ -377,7 +377,7 @@ async def skip(_, message):
                         out = out + "\n" + f"<b>» {x}</b> - {hm}"
             await message.reply_text(out)
         else:
-        queues.task_done(chat_id)
+            queues.task_done(chat_id)
         if queues.is_empty(chat_id):
             await app.pytgcalls.leave_group_call(chat_id)
         else:
