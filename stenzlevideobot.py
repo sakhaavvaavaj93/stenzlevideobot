@@ -85,6 +85,16 @@ HELP_BUTTON = InlineKeyboardMarkup(
     ]
 )
 
+@bot.on_message(
+
+    commandpro(["/play", "/yt", "/ytp", "play", "yt", "ytp", "@", "#"])
+
+    & filters.group
+    & ~filters.edited
+    & ~filters.forwarded
+    & ~filters.via_bot
+)
+
 async def skip_current_song(chat_id):
     if chat_id in QUEUE:
         chat_queue = get_queue(chat_id)
