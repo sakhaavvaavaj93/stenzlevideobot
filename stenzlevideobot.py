@@ -23,7 +23,7 @@ from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup, 
 from pyrogram.errors import UserAlreadyParticipant, UserNotParticipant
 from helpers.queues import QUEUE, add_to_queue, get_queue, clear_queue, pop_an_item, is_empty, task_done
 from helpers.admin_check import *
-from config import OWNER_ID,BOT_USERNAME,SUPPORT,API_ID,API_HASH
+from config import OWNER_ID, BOT_USERNAME, SUPPORT, API_ID, API_HASH, SESSION
 
 bot = Client(
     "SkyMusic",
