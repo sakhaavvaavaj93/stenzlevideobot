@@ -37,7 +37,7 @@ client = Client(os.environ["SESSION_NAME"], int(os.environ["API_ID"]), os.enviro
 app = PyTgCalls(client)
 
 OWNER_ID = int(os.environ["OWNER_ID"])
-BOT_USERNAME = os.environ["BOT_USERNAME"])
+BOT_USERNAME = os.environ["BOT_USERNAME"]
 SUPPORT = os.environ["SUPPORT"]
 
 LIVE_CHATS = []
