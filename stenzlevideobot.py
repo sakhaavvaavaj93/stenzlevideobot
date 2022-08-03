@@ -142,19 +142,6 @@ async def skip_item(chat_id, lol):
             title = chat_queue[x][0]
             chat_queue.pop(x)
             return title
-        else:
-        queues.task_done(chat_id)
-        if queues.is_empty(chat_id):
-            await app.pytgcalls.leave_group_call(chat_id)
-        else:
-            await app.pytgcalls.change_stream(
-                chat_id, 
-                InputStream(
-                    InputAudioStream(
-                        app.queues.get(chat_id)["file"],
-                    ),
-                ),
-            )
         except Exception as e:
             print(e)
             return 0
