@@ -1,0 +1,9 @@
+pyrogram==1.4.16
+tgcrypto
+py-tgcalls==0.9.1
+youtube_search
+pytube
+yt-dlp
+youtube_dl
+ffmpeg
+heroku3

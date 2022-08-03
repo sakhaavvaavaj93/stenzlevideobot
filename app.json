@@ -1,0 +1,41 @@
+{
+  "name": "stenzle video bot",
+  "description": "Bot to view videos via telegram.",
+  "keywords": ["music", "voicechat", "telegram"],
+  "logo": "https://telegra.ph/file/4243945a1a75da258a50b.jpg",
+  "repository": "https://github.com/sakhaavvaavaj93/stenzlevideobot",
+  "stack": "container",
+  "env": {
+    "SESSION_NAME": {
+      "description": "Masukan string session pyrogram",
+      "required": true
+    },
+    "BOT_TOKEN": {
+      "description": "Masukan Bot Token Dari @BotFather",
+      "required": true
+    },
+    "API_ID": {
+      "description": "Silahkan Ambil Di my.telegram.org/apps",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "Silahkan Ambil Di my.telegram.org/apps",
+      "required": true
+    },
+    "BOT_USERNAME": {
+      "description": "Silahkan masukan username bot mu tanpa @",
+      "required": true,
+      "value":"Stenzle_Videobot"
+    },
+    "SUPPORT": {
+      "description": "masuka username support tanpa @",
+      "required": true,
+      "value": "Kerala_Cousinsofficial"
+    },
+    "OWNER_ID": {
+      "description": "ID Telegram",
+      "required": true,
+      "value": "5423253221"
+    }
+  }
+}
