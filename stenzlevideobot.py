@@ -21,7 +21,7 @@ from pytgcalls.types.stream import StreamAudioEnded, StreamVideoEnded
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 from pyrogram.errors import UserAlreadyParticipant, UserNotParticipant
-from helpers.queues import QUEUE, add_to_queue, get_queue, clear_queue, pop_an_item
+from helpers.queues import QUEUE, add_to_queue, get_queue, clear_queue, pop_an_item, is_empty, task_done
 from helpers.admin_check import *
 
 bot = Client(
