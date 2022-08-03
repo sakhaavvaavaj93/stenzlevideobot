@@ -7,3 +7,4 @@ yt-dlp
 youtube_dl
 ffmpeg
 heroku3
+dotenv
