@@ -57,22 +57,21 @@ HELP_TEXT = """<b>» ᴍᴀɪɴ ᴄᴏᴍᴍᴀɴᴅꜱ «</b>
 » /playlist : sʜᴏᴡs ᴛʜᴇ ʟɪsᴛ ᴏғ ǫᴜᴇᴜᴇᴅ ᴛʀᴀᴄᴋs.
 » /join or /userbotjoin : ʀᴇǫᴜᴇsᴛs ᴛʜᴇ ᴀssɪsᴛᴀɴᴛ ᴛᴏ ᴊᴏɪɴ ʏᴏᴜʀ ᴄʜᴀᴛ.
 » /restart : ʀᴇsᴛᴀʀᴛs ᴛʜᴇ ʙᴏᴛ.
-💻<b><u>ᴍᴀᴅᴇ ʙʏ ♥ SKY ♥</u></b>"""
+💻<b>📽️KK ARMY📽️</b>"""
 
-START_IMG = "https://telegra.ph/file/95f64da5d816bcd511c65.jpg"
+START_IMG = "https://telegra.ph/file/4243945a1a75da258a50b.jpg"
+
+HELP_IMG = "https://telegra.ph/file/41e0fa6b5c15870f94b56.jpg"
 
 START_BUTTONS = InlineKeyboardMarkup(
     [
         [
             InlineKeyboardButton(
-                        "➕ ᴀᴅᴅ ꜱᴋʏ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕", url="https://t.me/skymusicbot?startgroup=true")
+                        "➕ ᴀᴅᴅ ꜱᴋʏ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕", url="https://t.me/StenzleVideobot?startgroup=true")
         ],
         [   
             InlineKeyboardButton("👩‍💻 ᴅᴇᴠᴇʟᴏᴘᴇʀ", user_id=1356469075),
             InlineKeyboardButton("💬 sᴜᴩᴩᴏʀᴛ", url=f"https://t.me/{SUPPORT}")
-        ],
-        [
-            InlineKeyboardButton("🌐sᴏᴜʀᴄᴇ ᴋᴏᴅᴇ🌐", url="https://github.com/Cangcimenn/SkyMusic")
         ]
     ]
 )
@@ -114,14 +113,7 @@ async def skip_current_song(chat_id):
             type = chat_queue[1][4]
             Q = chat_queue[1][5]
             thumb = chat_queue[1][6]
-            if type == "Audio":
-                await app.change_stream(
-                    chat_id,
-                    AudioPiped(
-                        playlink,
-                    ),
-                )
-            elif type == "Video":
+            if type == "Video":
                 if Q == "high":
                     hm = HighQualityVideo()
                 elif Q == "mid":
@@ -277,7 +269,7 @@ async def start_private(client: Client, message: Message):
     
 @bot.on_message(filters.command(["help", "cmd", "cmds", "commands"]) & filters.private)
 async def help_cmd(_, message):
-    await message.reply_photo(photo = START_IMG,
+    await message.reply_photo(photo = HELP_IMG,
                               caption = HELP_TEXT,
                              reply_markup = HELP_BUTTON)
 
@@ -304,7 +296,7 @@ async def join_chat(c: Client, m: Message):
         return await client.send_message(chat_id, "**» ᴀssɪsᴛᴀɴᴛ ꜱᴜᴅᴀʜ ʙᴇʀɢᴀʙᴜɴɢ ᴅᴇɴɢᴀɴ ᴏʙʀᴏʟᴀɴ.**")
 
     
-@bot.on_message(filters.command(["play", "vplay"]) & filters.group)
+@bot.on_message(filters.command(["vplay"]) & filters.group)
 async def video_play(_, message):
     await message.delete()
     user_id = message.from_user.id
@@ -319,7 +311,7 @@ async def video_play(_, message):
     
     m = await message.reply_text("**» ꜱᴇᴅᴀɴɢ ᴍᴇᴍᴘʀᴏꜱᴇꜱ ʟᴀɢᴜ...**")
     
-      if state == "vplay":
+     if state == "vplay":
         damn = AudioVideoPiped
         ded = yt_video
         doom = "ᴠɪᴅᴇᴏ"
@@ -370,45 +362,6 @@ async def video_play(_, message):
     except Exception as e:
         return await m.edit(str(e))
     
-    
-@bot.on_message(filters.command(["stream", "vstream"]) & filters.group)
-@is_admin
-async def stream_func(_, message):
-    await message.delete()
-    state = message.command[0].lower()
-    try:
-        link = message.text.split(None, 1)[1]
-    except:
-        return await message.reply_text(f"<b>Usage:</b> <code>/{state} [link]</code>")
-    chat_id = message.chat.id
-    
-    if state == "stream":
-        damn = AudioPiped
-        emj = "🎵"
-    elif state == "vstream":
-        damn = AudioVideoPiped
-        emj = "🎬"
-    m = await message.reply_text("» ꜱᴇᴅᴀɴɢ ᴍᴇᴍᴘʀᴏꜱᴇꜱ ʟᴀɢᴜ...")
-    try:
-        if chat_id in QUEUE:
-            return await m.edit("❗️ꜱɪʟᴀʜᴋᴀɴ ᴋɪʀɪᴍ <code>/end</code> ᴜɴᴛᴜᴋ ᴍᴇɴɢᴀᴋʜɪʀɪ ᴏʙʀᴏʟᴀɴ ꜱᴜᴀʀᴀ ꜱᴇʙᴇʟᴜᴍ ꜱᴛʀᴇᴀᴍɪɴɢ ʟᴀɴɢꜱᴜɴɢ.")
-        elif chat_id in LIVE_CHATS:
-            await app.change_stream(
-                chat_id,
-                damn(link)
-            )
-            await m.edit(f"{emj} Started streaming: [Link]({link})", disable_web_page_preview=True)
-        else:    
-            await app.join_group_call(
-                chat_id,
-                damn(link),
-                stream_type=StreamType().pulse_stream)
-            await m.edit(f"{emj} Started streaming: [Link]({link})", disable_web_page_preview=True)
-            LIVE_CHATS.append(chat_id)
-    except Exception as e:
-        return await m.edit(str(e))
-
-
 @bot.on_message(filters.command("skip") & filters.group)
 @is_admin
 async def skip(_, message):
