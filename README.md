@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://t.me/Stenzle_Videobot">
-     <img height="200px" src="https://telegra.ph/file/4243945a1a75da258a50b.jpg">
+     <img src="https://telegra.ph/file/4243945a1a75da258a50b.jpg">
   </a>
 </p>
 
